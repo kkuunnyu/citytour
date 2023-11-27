@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>버스투어 - 도심고궁남산코스</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <style>
+    @font-face {
+      font-family: 'GmarketSansMedium';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    html,
+    body {
+      overflow-x: hidden;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      text-align: center;
+      font-family: 'GmarketSansMedium';
+      color: #333;
+      background: #f5f5f5;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      box-sizing: border-box;
+      padding: 20px;
+      background: #fff;
+    }
+
+    .swiper {
+      max-width: 600px;
+      margin: auto;
+      box-sizing: border-box;
+      padding: 0px;
+      background: #fff;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .swiper-button-next {
+      background: url(/img/right2.svg) no-repeat;
+      background-size: 100% auto;
+      background-position: center;
+
+    }
+
+    .swiper-button-prev {
+      background: url(/img/left2.svg) no-repeat;
+      background-size: 100% auto;
+    }
+
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+      display: none;
+    }
+
+    .swiper-pagination-bullet {
+      background: #fff;
+      border: 2px solid #333;
+    }
+
+    #second-section {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 20px;
+      text-align: left;
+      margin-bottom: 30px;
+
+    }
+
+    #second-section img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    #third-section {
+      text-align: center;
+      max-width: 50%;
+      box-sizing: border-box;
+      margin: auto;
+      border-radius: 15px;
+      cursor: pointer;
+      background: #fff;
+      font-size: 1.2rem;
+      height: 70px;
+      border: 1px solid #333;
+      margin-bottom: 30px;
+
+    }
+
+    #third-section:hover {
+      background: #333;
+      transition: all 0.3s;
+      color: #fff;
+
+    }
+
+    #third-section .schedule {
+      display: block;
+    }
+
+    #third-section a {
+      text-decoration: none;
+      color: #333;
+      display: block;
+    }
+
+    #third-section img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    #fourth-section {
+      width: 100%;
+      box-sizing: border-box;
+      text-align: center;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+
+    #fourth-section img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    #map-section {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 20px;
+      text-align: center;
+    }
+
+    #map {
+      max-width: 100%;
+      height: 300px;
+    }
+
+    #fifth-section {
+      width: 100%;
+      box-sizing: border-box;
+      text-align: center;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+
+    #fifth-section img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    #sixth-section {
+      width: 100%;
+      box-sizing: border-box;
+      text-align: center;
+      padding: 20px;
+      margin-bottom: 70px;
+
+    }
+
+    #sixth-section img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .title-section {
+      text-align: center;
+    }
+
+    .sub-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .inner-text {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    .main-title {
+      font-size: 2.5rem;
+      font-weight: 600;
+    }
+
+    .title-text {
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: 600;
+      border-top: 20px;
+    }
+
+    .sub-text {
+      color: #666;
+      font-size: 1em;
+    }
+
+    .reservation-button {
+      background-color: #fdd118;
+      color: #000;
+      transition: all 0.3s;
+      font-family: 'GmarketSansMedium';
+      box-shadow: 0px 2px 5px #666;
+      z-index: 10;
+    }
+
+    .reservation-button:hover {
+      background-color: #a08000;
+      color: #fff;
+    }
+
+    .close-button {
+      background-color: #fff;
+      color: #000;
+      transition: all 0.3s;
+      font-family: 'GmarketSansMedium';
+      box-shadow: 0px 2px 5px #666;
+      z-index: 10;
+    }
+
+    .close-button:hover {
+      background-color: #c7c7c7;
+      color: #000;
+      transition: all 0.3s;
+    }
+
+    .action-buttons {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      width: 350px;
+      z-index: 100;
+    }
+
+    .action-buttons button {
+      padding: 10px;
+      max-width: 500px;
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      z-index: 20;
+    }
+
+    .inner-button {
+      background-color: #ffdfdf;
+      color: #000;
+      transition: all 0.3s;
+      font-family: 'GmarketSansMedium';
+      box-shadow: 0px 2px 5px #666;
+      z-index: 10;
+    }
+
+    .inner-button:hover {
+      background-color: #ff7171;
+      color: #000;
+      transition: all 0.3s;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div id="title-section">
+      <p class="main-title">도심고궁남산코스</p>
+      <p class="inner-text">도심고궁남산코스는 N서울타워, 명동, 남산골 한옥마을, 창덕궁, 인사동, 청와대, 경복궁 등 서울 주요 관광지를 순환하며 도심과 고궁, 남산이 어우러진 아름다운
+        서울의 모습을 볼 수 있는 코스입니다. 원하는 정류장에서 하차하여 자유롭게 관람 후 다음 버스를 이용할 수 있습니다.
+      </p>
+    </div>
+
+
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="/img/1_day01.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="/img/1_day02.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="/img/1_day03.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="/img/1_day04.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="/img/1_day05.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="/img/1_day06.jpg" alt=""></div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <div id="second-section">
+      <p class="title-text">운행 노선</p>
+      <img src="/img/line_namsan.svg" alt="line_namsan">
+    </div>
+
+    <div id="third-section" onclick="window.open('/img/schedule_namsan.png');">
+      <p class="schedule">운행 시간표 보기</p>
+    </div>
+
+    <div id="fourth-section">
+      <p class="title-text">지도</p>
+      <img src="/img/map_namsan.png" alt="map_namsan">
+    </div>
+
+    <div id="fifth-section">
+      <p class="title-text">요금 안내</p>
+      <img src="/img/info.svg" alt="info">
+    </div>
+
+    <div id="sixth-section">
+      <p class="title-text">결제 및 취소 안내</p>
+      <img src="/img/cancel_namsan.svg" alt="cancel">
+    </div>
+
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      speed: 1200,
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+
+<div class="action-buttons">
+  <button class="inner-button" onclick="'#'">상세 페이지</button>
+  <button class="reservation-button" onclick="'#'">즉시 예약하기</button>
+  <button type="button"  onclick="location.href='./index.html'" class="close-button" style="width: 130px;">닫기</button>
+</div>
+</body>
+
+</html>

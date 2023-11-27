@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .banner {
+            max-width: 600px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .banner-main:hover {
+            opacity: 0.7;
+            transition: all 0.3s;
+        }
+
+        .reservation:hover {
+            opacity: 0.7;
+            transition: all 0.3s;
+        }
+    </style>
+    <title>Responsive Banner</title>
+</head>
+
+<body>
+
+    <div class="banner">
+        <div>
+            <a href="/namsan.html" class="banner-main">
+                <img class="image" src="/img/banner1.png" alt="Left Image">
+            </a>
+        </div>
+        <div>
+            <a href="#" class="reservation">
+                <img class="image" src="/img/reservation.png" alt="Right Image">
+            </a>
+        </div>
+    </div>
+
+    <div class="banner">
+        <div>
+            <a href="/tradition.html" class="banner-main">
+                <img class="image" src="/img/banner2.png" alt="Left Image">
+            </a>
+        </div>
+
+        <div>
+            <a href="#" class="reservation">
+                <img class="image" src="/img/reservation.png" alt="Right Image">
+            </a>
+        </div>
+    </div>
+
+</body>
+
+</html>
