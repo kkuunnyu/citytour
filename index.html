@@ -5,34 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        .banner {
+        .container {
             max-width: 600px;
             margin: auto;
+            position: relative;
+        }
+
+        .banner {
             display: flex;
             width: 100%;
         }
 
-        .image {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .image2 {
-            max-width: 100%;
+        .image,
+        .image2,
+        .reservation,
+        .back-button img {
+            width: 100%;
             height: auto;
         }
 
         .reservation {
             max-width: 10%;
-            height: auto;
         }
 
-        .banner-main:hover {
-            opacity: 0.7;
-            transition: all 0.3s;
+        .back-button {
+            position: absolute;
+            top: 0.5%;
+            left: 1%;
+            cursor: pointer;
+            max-width: 10%;
         }
 
-        .reservation:hover {
+        .banner-main:hover,
+        .reservation:hover{
             opacity: 0.7;
             transition: all 0.3s;
         }
@@ -41,48 +46,72 @@
 </head>
 
 <body>
-
-    <div class="banner">
-        <div>
-            <a href="/namsan.html" class="banner-main">
-                <img class="image" src="/img/banner1.png" alt="Left Image">
+    <div class="container">
+        <div class="back-button">
+            <a href="tmoneytia://main/home">
+                <img src="/img/back.ico" alt="Back Icon">
             </a>
         </div>
-        <div>
-            <a href="tmoneytia://bus/schedule?startID=04519A1&endID=04519A2" class="reservation">
-                <img class="image2" src="/img/reservation.png" alt="Right Image">
-            </a>
+
+        <div class="banner">
+            <div>
+                <img class="image" src="/img/topbar.png" alt="Left Image">
+            </div>
+        </div>
+    
+        <div class="banner">
+            <div>
+                <img class="image" src="/img/tmoneygo_top.png" alt="Left Image">
+            </div>
+        </div>
+    
+        <div class="banner">
+            <div>
+                <a href="/namsan.html" class="banner-main">
+                    <img class="image" src="/img/banner1.png" alt="Left Image">
+                </a>
+            </div>
+            <div>
+                <a href="tmoneytia://bus/schedule?startID=04519A1&endID=04519A2" class="reservation">
+                    <img class="image2" src="/img/reservation.png" alt="Right Image">
+                </a>
+            </div>
+        </div>
+    
+        <div class="banner">
+            <div>
+                <a href="/tradition.html" class="banner-main">
+                    <img class="image" src="/img/banner2.png" alt="Left Image">
+                </a>
+            </div>
+    
+            <div>
+                <a href="tmoneytia://bus/schedule?startID=04565A1&endID=04565A2" class="reservation">
+                    <img class="image2" src="/img/reservation.png" alt="Right Image">
+                </a>
+            </div>
+        </div>
+    
+        <div class="banner">
+            <div>
+                <a href="/night.html" class="banner-main">
+                    <img class="image" src="/img/banner3.png" alt="Left Image">
+                </a>
+            </div>
+    
+            <div>
+                <a href="tmoneytia://bus/schedule?startID=04519A1&endID=04519A4" class="reservation">
+                    <img class="image2" src="/img/reservation.png" alt="Right Image">
+                </a>
+            </div>
+        </div>
+    
+        <div class="banner">
+            <div>
+                <img class="image" src="/img/tmoneygo_bottom.png" alt="Left Image">
+            </div>
         </div>
     </div>
-
-    <div class="banner">
-        <div>
-            <a href="/tradition.html" class="banner-main">
-                <img class="image" src="/img/banner2.png" alt="Left Image">
-            </a>
-        </div>
-
-        <div>
-            <a href="tmoneytia://bus/schedule?startID=04565A1&endID=04565A2" class="reservation">
-                <img class="image2" src="/img/reservation.png" alt="Right Image">
-            </a>
-        </div>
-    </div>
-
-    <div class="banner">
-        <div>
-            <a href="/night.html" class="banner-main">
-                <img class="image" src="/img/banner3.png" alt="Left Image">
-            </a>
-        </div>
-
-        <div>
-            <a href="tmoneytia://bus/schedule?startID=04519A1&endID=04519A4" class="reservation">
-                <img class="image2" src="/img/reservation.png" alt="Right Image">
-            </a>
-        </div>
-    </div>
-
 </body>
 
 </html>
